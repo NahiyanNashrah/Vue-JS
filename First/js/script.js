@@ -2,7 +2,8 @@ var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!',
-    link: 'https://google.com'
+    link: 'https://google.com',
+    finishedLink: '<a href="https://google.com">Google</a>'
   },
   methods: {
     changeMessage: function(event) {
