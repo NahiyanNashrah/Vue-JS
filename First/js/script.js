@@ -5,8 +5,7 @@ var app = new Vue({
   },
   methods: {
     changeMessage: function(event) {
-      this.message = event.target.value;
+      return this.message;
     }
   }
 });
-app.message = 'data has changed!';
