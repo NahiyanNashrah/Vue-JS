@@ -8,12 +8,19 @@
   </head>
 
   <body>
-    <div id="app">
-      <!-- <input type="text" v-on:input="changeMessage" /> -->
-      <!--<a href="{{ link }} "></a> 
+    <!-- <div id="app"> -->
+    <!-- <input type="text" v-on:input="changeMessage" /> -->
+    <!--<a href="{{ link }} "></a> 
     curly braces cant be used in any html attribute, it assumes the whole thing as a link
     -->
-      <p>{{ changeMessage() }} - <a v-bind:href=" link "> Google!</a></p>
+    <!-- <p>{{ changeMessage() }} - <a v-bind:href=" link "> Google!</a></p>
+    </div> -->
+
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound
+        title!
+      </span>
     </div>
     <script src="js/script.js"></script>
   </body>
