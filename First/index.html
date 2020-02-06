@@ -10,7 +10,10 @@
   <body>
     <div id="app">
       <!-- <input type="text" v-on:input="changeMessage" /> -->
-      <p>{{ changeMessage() }}</p>
+      <!--<a href="{{ link }} "></a> 
+    curly braces cant be used in any html attribute, it assumes the whole thing as a link
+    -->
+      <p>{{ changeMessage() }} - <a v-bind:href=" link "> Google!</a></p>
     </div>
     <script src="js/script.js"></script>
   </body>
