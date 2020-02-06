@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <title>Vue JS</title>
-    <link rel="stylesheet" href="js/script.js" />
+    <!-- <link rel="stylesheet" href="js/script.js" /> -->
     <script src="vue.js"></script>
   </head>
 
   <body>
     <div id="app">
+      <input type="text" v-on:input="changeMessage" />
       <p>{{ message }}</p>
     </div>
     <script src="js/script.js"></script>
