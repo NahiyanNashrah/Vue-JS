@@ -6,6 +6,17 @@ var app = new Vue({
     product: 'Socks',
     // description: 'A pair of warm, fuzzy socks'
     image: './vmSocks-green-onWhite.jpg',
-    inventory: '10'
+    inventory: '10',
+    details: ['80% cotton', '20% polyester', 'Gender neutral'],
+    variants: [
+      {
+        id: '1',
+        color: 'Green'
+      },
+      {
+        id: '2',
+        color: 'Blue'
+      }
+    ]
   }
 });
