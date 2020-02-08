@@ -17,6 +17,8 @@
 
         <div class="product-info">
           <h1>{{ product }}</h1>
+          <!-- <p>{{ description }}</p> -->
+
           <p v-if="inventory > 10">In Stock</p>
           <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out!</p>
           <p v-else>Out of Stock</p>
@@ -24,13 +26,20 @@
             <li v-for="item in details">{{ item }}</li>
           </ul>
           <h3>Available Colors</h3>
-          <div v-for="item in variants" :key="item.color">
-            <p>{{ item.color }}</p>
+          <div v-for="item in variants" :key="item.id">
+            <p v-on:mouseover="updateColor(item.image)">{{ item.color }}</p>
           </div>
-          <!-- <p>{{ description }}</p> -->
+          <button v-on:click="addToCart">Add To Cart</button>
+          <div class="cart">
+            <p>Cart ({{ cart }})</p>
+          </div>
         </div>
       </div>
     </div>
+    <!-- <button v-on:click="addToCart">Add To Cart</button>
+    <div class="cart">
+      <p>Cart {{ cart }}</p>
+    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="js/script.js"></script>
