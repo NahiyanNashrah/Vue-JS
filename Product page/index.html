@@ -16,7 +16,7 @@
         </div>
 
         <div class="product-info">
-          <h1>{{ product }}</h1>
+          <h1>{{ title }}</h1>
           <!-- <p>{{ description }}</p> -->
 
           <p v-if="inventory > 10">In Stock</p>
@@ -30,11 +30,11 @@
           <h3>Available Colors</h3>
           <!-- style="{backgroundColor:item.color ==> style = "background-color : blue" -->
           <div
-            v-for="item in variants"
+            v-for="(item, index) in variants"
             v-bind:key="item.id"
             class="color-box"
             v-bind:style="{backgroundColor:item.color}"
-            v-on:mouseover="updateColor(item.image,item.inventory)"
+            v-on:mouseover="updateColor(index)"
           ></div>
           <button
             v-on:click="addToCart"
