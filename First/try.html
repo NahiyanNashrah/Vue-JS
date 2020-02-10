@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue JS</title>
+    <!-- <link rel="stylesheet" href="js/script.js" /> -->
+    <script src="vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- <click-counter></click-counter> -->
+      <show-message
+        title="Hello World"
+        body="This text is shown using props"
+      ></show-message>
+
+      <show-message title="Heeyyyyyyy"></show-message>
+    </div>
+
+    <!-- <script type="text/x-template" id="show">
+      <div>
+          <h1>{{ title }}</h1>
+          <h3>{{ body }}</h3>
+      </div>
+    </script> -->
+
+    <script>
+      //   Vue.component('click-counter', {
+      //     template: `<button @click="count++">{{count}}</button>`,
+      //     data() {
+      //       return {
+      //         count: 0
+      //       };
+      //     }
+      //   });
+
+      Vue.component('show-message', {
+        // props: ['title', 'body'],
+        props: {
+          title: {
+            type: String,
+            required: true
+          },
+          body: {
+            type: String
+            // required: true,
+          }
+        },
+        template: `<div>
+          <h1>{{ title }}</h1>
+          <h3>{{ body }}</h3>
+      </div>`
+      });
+      new Vue({
+        el: '#app'
+      });
+    </script>
+  </body>
+</html>

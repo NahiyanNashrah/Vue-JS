@@ -16,8 +16,10 @@
       </span>
       <!-- directives allow to pass dynamic data to html attribute -->
       <!-- <a href="{{ link }} "></a> 
-      curly braces cant be used in any html attribute, it assumes the whole thing as a link
-      -->
+    curly braces cant be used in any html attribute, it assumes the whole thing as a link
+    -->
+      <h3>{{ message }}</h3>
+
       <p>{{ changeMessage() }} - <a v-bind:href=" link "> Google!</a></p>
       <hr />
       <p v-html="finishedLink"></p>

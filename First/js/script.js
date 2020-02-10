@@ -9,7 +9,8 @@ var app = new Vue({
   },
   methods: {
     changeMessage: function(event) {
-      this.message = 'Hello!';
+      // this.message = event.target.value;
+      this.message = 'hello';
       return this.message;
     }
   }
