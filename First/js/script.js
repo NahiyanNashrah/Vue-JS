@@ -1,9 +1,11 @@
 var app = new Vue({
   el: '#app',
   data: {
+    counter: 0,
     message: 'Hello Vue!',
     link: 'https://google.com',
-    finishedLink: '<a href="https://google.com">Google</a>'
+    finishedLink: '<a href="https://google.com">Google</a>',
+    showTime: 'You loaded this page on ' + new Date().toLocaleString()
   },
   methods: {
     changeMessage: function(event) {
@@ -12,11 +14,3 @@ var app = new Vue({
     }
   }
 });
-
-// dynamically bounding title on hovering
-// var app2 = new Vue({
-//   el: '#app-2',
-//   data: {
-//     message: 'You loaded this page on ' + new Date().toLocaleString()
-//   }
-// });
