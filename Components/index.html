@@ -25,7 +25,9 @@
   </div>
   <script type="text/x-template" id="plan-picker-template">
     <div class="plans">
-        <plan v-for="plan in plans" :name="plan"></plan>
+        <plan v-for="plan in plans"
+        :key="plan.id"
+        :name="plan"></plan>
       </div >
   </script>
 
