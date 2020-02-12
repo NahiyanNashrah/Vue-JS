@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue JS</title>
+    <!-- <link rel="stylesheet" href="js/script.js" /> -->
+  </head>
+
+  <body>
+    <div id="blog-post-demo" :style="{'font-size':fontSize + 'px'}">
+      <blog-post
+        v-for="post in posts"
+        :key="post.id"
+        :attr="post"
+        @enlarge="fontSize ++"
+      ></blog-post>
+    </div>
+
+    <script type="text/x-template" id="blog-post-template">
+      <div class = "blog-post">
+        <h3>{{ attr.title }} <button @click="$emit('enlarge')" > Enlarge Text</button></h3>
+      <p> {{ attr.content}}</p>
+      </div>
+    </script>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
