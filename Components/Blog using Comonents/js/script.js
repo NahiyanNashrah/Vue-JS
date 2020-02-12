@@ -6,6 +6,7 @@ Vue.component('blog-post', {
   },
   template: `#blog-post-template`
 });
+
 new Vue({
   el: '#blog-post-demo',
   data: {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Component Practice with showing text</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <show-message
+        title="Hello World"
+        body="This text is shown using props"
+      ></show-message>
+      <hr />
+      <show-message
+        title="Heeyyyyyyy"
+        body="Another text is shown using props"
+      ></show-message>
+    </div>
+
+    <!-- <script type="text/x-template" id="show">
+      <div>
+          <h1>{{ title }}</h1>
+          <h3>{{ body }}</h3>
+      </div>
+    </script> -->
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      Vue.component('show-message', {
+        props: {
+          title: {
+            type: String,
+            required: true
+          },
+          body: {
+            type: String,
+            required: true
+          }
+        },
+        data() {
+          return {
+            isVisible: true
+          };
+        },
+        methods: {
+          hide() {
+            this.isVisible = false;
+          }
+        },
+        template: `<div v-if="isVisible">
+          <h1>{{ title }} <span> <button @click = "hide"> Hide </button></span></h1>
+          <h3>{{ body }}</h3>
+      </div>`
+      });
+      new Vue({
+        el: '#app'
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  </body>
+</html>
