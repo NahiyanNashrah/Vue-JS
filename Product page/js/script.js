@@ -40,9 +40,7 @@ Vue.component('product', {
           >
             Add To Cart
           </button>
-          <div class="cart">
-            <p>Cart ({{ cart }})</p>
-          </div>
+          
         </div>
       </div>
     `,
@@ -66,16 +64,16 @@ Vue.component('product', {
           img: './vmSocks-blue-onWhite.jpg',
           quantity: '15'
         }
-      ],
-      cart: 0
+      ]
     };
   },
   methods: {
     addToCart() {
-      if (this.variants[this.selectedVariants].quantity > 0) {
-        this.cart++;
-        this.variants[this.selectedVariants].quantity--;
-      }
+      // if (this.variants[this.selectedVariants].quantity > 0) {
+      //   this.cart++;
+      //   this.variants[this.selectedVariants].quantity--;
+      // }
+      this.$emit('add-to-cart', this.variants[this.selectedVariants].id);
     },
     updateColor: function(index) {
       this.selectedVariants = index;
@@ -104,6 +102,20 @@ Vue.component('product', {
 var app = new Vue({
   el: '#app',
   data: {
-    premium: true
+    premium: true,
+    cart: []
+  },
+  methods: {
+    // updateCart(id, amount) {
+    //   if (amount > 0) {
+    //     this.cart.push(id);
+    //     amount--;
+    //   }
+    // }
+    updateCart(id) {
+      if (id > 0) {
+        this.cart.push(id);
+      }
+    }
   }
 });
