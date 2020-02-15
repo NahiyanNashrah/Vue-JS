@@ -17,7 +17,11 @@
         ></app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <app-user-edit :myAge="age" @resetAge="age = $event"></app-user-edit>
+        <app-user-edit
+          :myAge="age"
+          @resetAge="age = $event"
+          :resetAgeFn="resetAge"
+        ></app-user-edit>
       </div>
     </div>
   </div>
@@ -41,6 +45,9 @@ export default {
     },
     resetName() {
       this.name = "Mili";
+    },
+    resetAge() {
+      this.age = 27;
     }
   },
   components: {

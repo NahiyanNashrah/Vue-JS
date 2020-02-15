@@ -3,13 +3,19 @@
     <h3>You may edit the User here</h3>
     <p>Edit me!</p>
     <p>Age is: {{ myAge }}</p>
-    <button @click="editAge">Edit Age</button>
+    <button @click="editAge">Edit Age with emit</button>
+    <button @click="resetAgeFn()">Edit Age with callback</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["myAge"],
+  props: {
+    myAge: {
+      type: Number
+    },
+    resetAgeFn: Function
+  },
   data() {
     return {};
   },

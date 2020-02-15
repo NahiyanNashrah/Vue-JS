@@ -5,8 +5,8 @@
     <p>Name is: {{ myName }}</p>
     <p>Age is: {{ myAge }}</p>
 
-    <button @click="resetName">Reset Name</button>
-    <button @click="resetFn()">Reset Name</button>
+    <button @click="resetName">Reset Name with emit</button>
+    <button @click="resetFn()">Reset Name with callback</button>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
       type: String,
       required: true
     },
-    resetFn: Function,
-    myAge: Number
+    myAge: Number,
+    resetFn: Function
   },
   data() {
     return {};
