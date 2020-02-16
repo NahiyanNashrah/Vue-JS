@@ -11,6 +11,12 @@ export default {
   },
   destroyed() {
     console.log("Author is destroyed!");
+  },
+  activated() {
+    console.log("Author component is activated!");
+  },
+  deactivated() {
+    console.log("Author component is deactivated!");
   }
 };
 </script>

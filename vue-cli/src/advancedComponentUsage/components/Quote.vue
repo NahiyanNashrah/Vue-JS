@@ -16,6 +16,12 @@ export default {
   },
   destroyed() {
     console.log("Quote component is destroyed!");
+  },
+  activated() {
+    console.log("Quote component is activated!");
+  },
+  deactivated() {
+    console.log("Quote component is deactivated!");
   }
 };
 </script>

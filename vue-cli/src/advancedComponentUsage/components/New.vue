@@ -18,6 +18,12 @@ export default {
   },
   destroyed() {
     console.log("New component is destroyed!");
+  },
+  activated() {
+    console.log("New component is activated!");
+  },
+  deactivated() {
+    console.log("New component is deactivated!");
   }
 };
 </script>
