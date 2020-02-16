@@ -3,6 +3,7 @@
     <h1>The User Component</h1>
     <p>I'm an awesome User!</p>
     <p>Name is: {{ name }}</p>
+    <p>Age is: {{ age }}</p>
 
     <button @click="changeName">Change Name</button>
 
@@ -17,11 +18,7 @@
         ></app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <app-user-edit
-          :myAge="age"
-          @resetAge="age = $event"
-          :resetAgeFn="resetAge"
-        ></app-user-edit>
+        <app-user-edit :myAge="age" @resetAge="age = $event" :resetAgeFn="resetAge"></app-user-edit>
       </div>
     </div>
   </div>

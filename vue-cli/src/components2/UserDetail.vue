@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { eventBus } from "../main";
 export default {
   props: {
     myName: {
@@ -28,6 +29,11 @@ export default {
       this.myName = "Mili";
       this.$emit("nameReset", this.myName);
     }
+  },
+  created() {
+    eventBus.$on("ageUpdate", age => {
+      this.myAge = age;
+    });
   }
 };
 </script>
