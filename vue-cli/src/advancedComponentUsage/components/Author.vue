@@ -5,6 +5,14 @@
 </template>
 
 <script>
+export default {
+  created() {
+    console.log("Author is created!");
+  },
+  destroyed() {
+    console.log("Author is destroyed!");
+  }
+};
 </script>
 
 <style>

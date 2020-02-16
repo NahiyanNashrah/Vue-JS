@@ -10,7 +10,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    console.log("Quote component is created!");
+  },
+  destroyed() {
+    console.log("Quote component is destroyed!");
+  }
+};
 </script>
 <style scoped>
 div {
