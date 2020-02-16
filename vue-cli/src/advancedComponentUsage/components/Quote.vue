@@ -1,6 +1,11 @@
 <template>
   <div>
-    <p>A wonderful quote!!!</p>
+    <div class="title">
+      <slot name="title"></slot>
+    </div>
+    <div class="content">
+      <slot name="content"></slot>
+    </div>
   </div>
 </template>
 
@@ -14,5 +19,11 @@ div {
   padding: 30px;
   margin: 30px auto;
   text-align: center;
+}
+h2 {
+  color: blueviolet;
+}
+.title {
+  font-style: italic;
 }
 </style>
