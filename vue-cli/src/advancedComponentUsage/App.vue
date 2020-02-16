@@ -11,7 +11,9 @@
           <p slot="content">A wonderful quote</p>
         </app-quote>-->
         <p>{{ selectedComponent }}</p>
-        <component :is="selectedComponent"></component>
+        <keep-alive>
+          <component :is="selectedComponent"></component>
+        </keep-alive>
       </div>
     </div>
   </div>
