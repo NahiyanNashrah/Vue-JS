@@ -12,9 +12,9 @@ export default {
   props: ["quotes"]
 };
 </script>
-<style lang="stylus" scoped>
+<style scoped>
 .panel-body {
-  font-family: 'Arizonia', cursive;
+  font-family: "Arizonia", cursive;
   font-size: 24px;
   color: #6e6e6e;
 }
