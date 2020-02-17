@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row QuoteHeader">
     <div class="col-sm-12">
       <h3>Quotes Added</h3>
       <div class="progress">
@@ -10,8 +10,10 @@
             aria-valuenow="60"
             aria-valuemin="0"
             aria-valuemax="100"
-            :style="{width:(quotesCount/maxQuotes) * 100 + '%'}"
-          >{{quotesCount}}/{{maxQuotes}}</div>
+            :style="{ width: quotesCount * 10 + '%' }"
+          >
+            {{ quotesCount }} / {{ maxQuotes }}
+          </div>
         </div>
       </div>
     </div>

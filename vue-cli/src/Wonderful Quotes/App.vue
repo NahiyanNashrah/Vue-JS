@@ -1,8 +1,14 @@
 <template>
   <div class="container">
-    <app-header></app-header>
+    <app-header
+      :quotesCount="quotesArr.length"
+      :maxQuotes="maxQuotes"
+    ></app-header>
     <app-new-quote @addQuote="showQuote($event)"></app-new-quote>
-    <app-quote-grid :quotes="quotesArr" @delQuote="quoteDelete"></app-quote-grid>
+    <app-quote-grid
+      :quotes="quotesArr"
+      @delQuote="quoteDelete"
+    ></app-quote-grid>
     <div class="row">
       <div class="col-sm-12 text-center">
         <div class="alert alert-info">Info: Click on a quote to delete it</div>
@@ -19,7 +25,7 @@ import Header from "../Wonderful Quotes/components/Header";
 export default {
   data() {
     return {
-      quotesArr: ["A simple quote"],
+      quotesArr: [],
       maxQuotes: 10
     };
   },
@@ -30,7 +36,11 @@ export default {
   },
   methods: {
     showQuote(quote) {
-      this.quotesArr.push(quote);
+      if (this.quotesArr.length < 10) {
+        this.quotesArr.push(quote);
+      } else {
+        alert("Please delete some quote first");
+      }
     },
     quoteDelete(index) {
       this.quotesArr.splice(index, 1);
@@ -39,5 +49,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

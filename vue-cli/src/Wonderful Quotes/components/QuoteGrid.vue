@@ -1,10 +1,12 @@
 <template>
-  <div class="row">
+  <div class="row QuoteGrid">
     <app-quote
-      v-for="(quote,index) in quotes"
+      v-for="(quote, index) in quotes"
       :key="quote.id"
+      v-if="index < 10"
       @click.native="deleteQuote(index)"
-    >{{quote}}</app-quote>
+      >{{ quote }}</app-quote
+    >
   </div>
 </template>
 <script>
