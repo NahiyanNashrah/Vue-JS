@@ -13,7 +13,7 @@
               type="text"
               id="email"
               class="form-control"
-              v-model="userData.email"
+              v-model.lazy="userData.email"
             />
           </div>
           <div class="form-group">
@@ -22,7 +22,7 @@
               type="password"
               id="password"
               class="form-control"
-              v-model="userData.password"
+              v-model.lazy="userData.password"
             />
           </div>
           <div class="form-group">
@@ -31,7 +31,7 @@
               type="number"
               id="age"
               class="form-control"
-              v-model="userData.age"
+              v-model.lazy.Number="userData.age"
             />
           </div>
         </div>
