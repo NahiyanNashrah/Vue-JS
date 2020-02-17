@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <app-header></app-header>
     <app-new-quote @addQuote="showQuote($event)"></app-new-quote>
     <app-quote-grid :quotes="quotesArr" @delQuote="quoteDelete"></app-quote-grid>
     <div class="row">
@@ -13,6 +14,7 @@
 <script>
 import QuoteGrid from "../Wonderful Quotes/components/QuoteGrid";
 import NewQuote from "../Wonderful Quotes/components/NewQuote";
+import Header from "../Wonderful Quotes/components/Header";
 
 export default {
   data() {
@@ -23,7 +25,8 @@ export default {
   },
   components: {
     "app-quote-grid": QuoteGrid,
-    "app-new-quote": NewQuote
+    "app-new-quote": NewQuote,
+    "app-header": Header
   },
   methods: {
     showQuote(quote) {
