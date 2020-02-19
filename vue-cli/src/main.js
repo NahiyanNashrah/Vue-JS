@@ -12,13 +12,31 @@ Vue.directive("highlight", {
     if (binding.modifiers["delayed"]) {
       delay = 2500;
     }
-    setTimeout(() => {
-      if (binding.arg == "background") {
-        el.style.backgroundColor = binding.value;
-      } else {
-        el.style.color = binding.value;
-      }
-    }, delay);
+    if (binding.modifiers["another"]) {
+      el.style.fontSize = "24px";
+      let style1 = "italic";
+      let style2 = "normal";
+      let current = style1;
+      setTimeout(() => {
+        setInterval(() => {
+          current == style1 ? (current = style2) : (current = style1);
+          el.style.fontStyle = current;
+          if (binding.arg == "background") {
+            el.style.backgroundColor = binding.value;
+          } else {
+            el.style.color = binding.value;
+          }
+        }, 1000);
+      }, delay);
+    } else {
+      setTimeout(() => {
+        if (binding.arg == "background") {
+          el.style.backgroundColor = binding.value;
+        } else {
+          el.style.color = binding.value;
+        }
+      }, delay);
+    }
   }
 });
 new Vue({
