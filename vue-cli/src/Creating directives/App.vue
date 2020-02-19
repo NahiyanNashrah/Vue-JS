@@ -13,7 +13,7 @@
         <h1>Custom Directives</h1>
         <p v-highlight:background.delayed.another="'blue'">Color this text using custom directive</p>
         <p
-          v-local-highlight:background.delayed.blink="'yellow'"
+          v-local-highlight:background.delayed.blink="{ primaryClr:'yellow',secondaryClr:'green',delay:'1000'}"
         >Color this text using locally registered directive</p>
       </div>
     </div>
@@ -31,8 +31,8 @@ export default {
           delay = 3500;
         }
         if (binding.modifiers["blink"]) {
-          let mainColor = binding.value;
-          let anotherColor = "green";
+          let mainColor = binding.value.primaryClr;
+          let anotherColor = binding.value.secondaryClr;
           let currentColor = mainColor;
           setTimeout(() => {
             setInterval(() => {
@@ -44,14 +44,14 @@ export default {
               } else {
                 el.style.color = currentColor;
               }
-            }, 1000);
+            }, binding.value.delay);
           }, delay);
         } else {
           setTimeout(() => {
             if (binding.arg == "background") {
-              el.style.backgroundColor = binding.value;
+              el.style.backgroundColor = binding.value.primaryClr;
             } else {
-              el.style.color = binding.value;
+              el.style.color = binding.value.primaryClr;
             }
           }, delay);
         }
