@@ -40,6 +40,11 @@ import App from "./Filters & Mixins/App.vue";
 //     }
 //   }
 // });
+Vue.mixin({
+  created() {
+    console.log("Global mixin");
+  }
+});
 new Vue({
   el: "#app",
   render: h => h(App)

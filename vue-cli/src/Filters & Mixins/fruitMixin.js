@@ -11,5 +11,8 @@ export const fruitMixin = {
         return item.match(this.filteredText);
       });
     }
+  },
+  created() {
+    console.log("fruitMixin created");
   }
 };

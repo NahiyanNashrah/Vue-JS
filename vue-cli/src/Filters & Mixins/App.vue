@@ -7,6 +7,7 @@
       </div>
     </div>
     <hr />
+    <button @click="fruits.push('Orange')">Add Item</button>
     <input type="text" v-model="filteredText" />
     <ul>
       <li v-for="fruit in filteredFruits" :key="fruit.id">{{fruit}}</li>
@@ -33,7 +34,10 @@ export default {
   components: {
     "app-list": List
   },
-  mixins: [fruitMixin]
+  mixins: [fruitMixin],
+  created() {
+    console.log("App.vue created");
+  }
 };
 </script>
 
