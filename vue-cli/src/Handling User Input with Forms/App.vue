@@ -20,7 +20,7 @@
           </div>
           <div class="form-group">
             <label for="age">Age</label>
-            <input type="number" id="age" class="form-control" v-model.lazy.Number="userData.age" />
+            <input type="number" id="age" class="form-control" :value="userData.age" />
           </div>
         </div>
       </div>

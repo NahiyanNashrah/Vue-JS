@@ -11,16 +11,18 @@
     <ul>
       <li v-for="fruit in filteredFruits" :key="fruit.id">{{fruit}}</li>
     </ul>
+    <hr />
+    <app-list></app-list>
   </div>
 </template>
 
 <script>
+import List from "./List";
+import { fruitMixin } from "./fruitMixin";
 export default {
   data() {
     return {
-      text: "Filters & Mixins",
-      fruits: ["Apple", "Banana", "Grape", "PineApple", "Mango", "Melon"],
-      filteredText: ""
+      text: "Filters & Mixins"
     };
   },
   filters: {
@@ -28,13 +30,10 @@ export default {
       return value.toUpperCase();
     }
   },
-  computed: {
-    filteredFruits() {
-      return this.fruits.filter(item => {
-        return item.match(this.filteredText);
-      });
-    }
-  }
+  components: {
+    "app-list": List
+  },
+  mixins: [fruitMixin]
 };
 </script>
 
