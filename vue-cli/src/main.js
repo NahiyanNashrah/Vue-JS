@@ -1,9 +1,13 @@
 import Vue from "vue";
 
 //    Axios
+import axios from "axios";
 import App from "./Axios/App.vue";
 import router from "./Axios/router";
 import store from "./Axios/store";
+axios.defaults.baseURL = "https://axios-2ae55.firebaseio.com";
+axios.defaults.headers.common["Authorization"] = "Authorized";
+axios.defaults.headers.get["Accepts"] = "application/json";
 new Vue({
   el: "#app",
   router,

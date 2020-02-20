@@ -101,7 +101,7 @@ export default {
       };
       console.log(formData);
       axios
-        .post("https://axios-2ae55.firebaseio.com/users.json", formData)
+        .post("/users.json", formData)
         .then(response => console.log(response))
         .catch(error => console.log(error));
     }
