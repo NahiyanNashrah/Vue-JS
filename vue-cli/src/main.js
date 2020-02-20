@@ -1,11 +1,38 @@
 import Vue from "vue";
-import App from "./Filters & Mixins/App.vue";
-// import App from "./Creating directives/App.vue";
+
+//    Axios
+import App from "./Axios/App.vue";
+import router from "./Axios/router";
+import store from "./Axios/store";
+new Vue({
+  el: "#app",
+  router,
+  store,
+  render: h => h(App)
+});
+
+//    Filters & Mixins
+// import App from "./Filters & Mixins/App.vue";
+// Vue.mixin({
+// created() {
+//   console.log("Global mixin");
+// }
+// });
+
+//     Handling User Input with Forms
 // import App from "./Handling User Input with Forms/App.vue";
+
+//    Wonderful Quotes
 // import App from "./Wonderful Quotes/App.vue";
-// //import App from "./advancedComponentUsage/App.vue";
+
+//    AdvancedComponentUsage
+// import App from "./advancedComponentUsage/App.vue";
+
 // import App from "./App.vue";
 // export const eventBus = new Vue();
+
+//   Creating directives
+// import App from "./Creating directives/App.vue";
 // Vue.directive("highlight", {
 //   bind(el, binding, vnode) {
 //     var delay = 0;
@@ -40,12 +67,8 @@ import App from "./Filters & Mixins/App.vue";
 //     }
 //   }
 // });
-Vue.mixin({
-  created() {
-    console.log("Global mixin");
-  }
-});
-new Vue({
-  el: "#app",
-  render: h => h(App)
-});
+
+// new Vue({
+//   el: "#app",
+//   render: h => h(App)
+// });
