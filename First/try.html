@@ -14,7 +14,7 @@
         title="Hello World"
         body="This text is shown using props"
       ></show-message>
-
+      <hr />
       <show-message title="Heeyyyyyyy"></show-message>
     </div>
 
@@ -47,8 +47,18 @@
             // required: true,
           }
         },
-        template: `<div>
-          <h1>{{ title }}</h1>
+        data() {
+          return {
+            isVisible: true
+          };
+        },
+        methods: {
+          hide() {
+            this.isVisible = false;
+          }
+        },
+        template: `<div v-if="isVisible">
+          <h1>{{ title }} <span> <button @click = "hide"> Hide </button></span></h1>
           <h3>{{ body }}</h3>
       </div>`
       });
