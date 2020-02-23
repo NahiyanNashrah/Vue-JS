@@ -1,19 +1,33 @@
 import Vue from "vue";
 
-//    Axios
-import axios from "axios";
-import App from "./Axios/App.vue";
-import router from "./Axios/router";
-import store from "./Axios/store";
-axios.defaults.baseURL = "https://axios-2ae55.firebaseio.com";
-axios.defaults.headers.common["Authorization"] = "Authorized";
-axios.defaults.headers.get["Accepts"] = "application/json";
+//    Routing
+import App from "./Routing/App.vue";
+import VueRouter from "vue-router";
+import { routes } from "./Routing/router";
+Vue.use(VueRouter);
+const router = new VueRouter({
+  routes: routes
+});
 new Vue({
   el: "#app",
-  router,
-  store,
+  router: router,
   render: h => h(App)
 });
+
+//    Axios
+// import axios from "axios";
+// import App from "./Axios/App.vue";
+// import router from "./Axios/router";
+// import store from "./Axios/store";
+// axios.defaults.baseURL = "https://axios-2ae55.firebaseio.com";
+// axios.defaults.headers.common["Authorization"] = "Authorized";
+// axios.defaults.headers.get["Accepts"] = "application/json";
+// new Vue({
+//   el: "#app",
+//   router,
+//   store,
+//   render: h => h(App)
+// });
 
 //    Filters & Mixins
 // import App from "./Filters & Mixins/App.vue";
