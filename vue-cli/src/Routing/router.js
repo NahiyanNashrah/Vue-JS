@@ -11,7 +11,8 @@ export const routes = [
     components: {
       default: Home,
       "header-top": Header
-    }
+    },
+    name: "Home"
   },
   {
     path: "/user",
@@ -27,6 +28,7 @@ export const routes = [
   },
   {
     path: "/redirect-me",
-    redirect: "/"
-  }
+    redirect: { name: "Home" }
+  },
+  { path: "*", redirect: "/" }
 ];
