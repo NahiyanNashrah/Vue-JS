@@ -18,6 +18,11 @@ const router = new VueRouter({
     return { x: 0, y: 0 };
   }
 });
+router.beforeEach((to, from, next) => {
+  // to and from are both route objects. must call `next`.
+  console.log("before Each");
+  next();
+});
 new Vue({
   el: "#app",
   router: router,
