@@ -9,6 +9,7 @@
 export default {
   methods: {
     increment() {
+      console.log(this.$store.state.counter);
       return this.$store.state.counter++;
     },
     decrement() {
