@@ -9,10 +9,10 @@
 export default {
   methods: {
     increment() {
-      this.$emit("updated", 1);
+      return this.$store.state.counter++;
     },
     decrement() {
-      this.$emit("updated", -1);
+      return this.$store.state.counter--;
     }
   }
 };

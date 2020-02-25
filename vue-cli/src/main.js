@@ -1,8 +1,10 @@
 import Vue from "vue";
 import App from "./State Management/App.vue";
+import { store } from "./State Management/store/store";
 
 new Vue({
   el: "#app",
+  store: store,
   render: h => h(App)
 });
 
