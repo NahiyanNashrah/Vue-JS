@@ -26,8 +26,9 @@ export default {
           users.push(user);
         }
         console.log(users);
-        this.email = users[0].email;
+        this.email = users[1].email;
       })
+
       .catch(error => console.log(error));
   }
 };

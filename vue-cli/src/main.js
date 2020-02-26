@@ -1,12 +1,14 @@
 import Vue from "vue";
-import App from "./State Management/App.vue";
-import { store } from "./State Management/store/store";
 
-new Vue({
-  el: "#app",
-  store: store,
-  render: h => h(App)
-});
+//  State
+// import App from "./State Management/App.vue";
+// import { store } from "./State Management/store/store";
+
+// new Vue({
+//   el: "#app",
+//   store: store,
+//   render: h => h(App)
+// });
 
 //    Routing
 // import App from "./Routing/App.vue";
@@ -37,20 +39,20 @@ new Vue({
 //   render: h => h(App)
 // });
 
-//    Axios
-// import axios from "axios";
-// import App from "./Axios/App.vue";
-// import router from "./Axios/router";
-// import store from "./Axios/store";
-// axios.defaults.baseURL = "https://axios-2ae55.firebaseio.com";
-// axios.defaults.headers.common["Authorization"] = "Authorized";
-// axios.defaults.headers.get["Accepts"] = "application/json";
-// new Vue({
-//   el: "#app",
-//   router,
-//   store,
-//   render: h => h(App)
-// });
+//Axios;
+import axios from "axios";
+import App from "./Axios/App.vue";
+import router from "./Axios/router";
+import store from "./Axios/store";
+axios.defaults.baseURL = "https://axios-2ae55.firebaseio.com";
+axios.defaults.headers.common["Authorization"] = "Authorized";
+axios.defaults.headers.get["Accepts"] = "application/json";
+new Vue({
+  el: "#app",
+  router,
+  store,
+  render: h => h(App)
+});
 
 //    Filters & Mixins
 // import App from "./Filters & Mixins/App.vue";
