@@ -8,18 +8,30 @@ export const store = new Vuex.Store({
   },
   getters: {
     doubleCounter(state) {
-      return state.counter * 2;
+      return state.counter;
     },
     stringCounter(state) {
-      return state.counter * 2 + " clicks";
+      return state.counter + " clicks";
     }
   },
   mutations: {
-    increment: state => {
-      state.counter++;
+    increment: (state, payload) => {
+      state.counter += payload;
     },
-    decrement: state => {
-      state.counter--;
+    decrement: (state, payload) => {
+      state.counter -= payload;
+    }
+  },
+  actions: {
+    asyncIncrement: (context, payload) => {
+      setTimeout(() => {
+        context.commit("increment", payload.by);
+      }, payload.duration);
+    },
+    asyncDecrement: (context, payload) => {
+      setTimeout(() => {
+        context.commit("decrement", payload.by);
+      }, payload.duration);
     }
   }
 });
