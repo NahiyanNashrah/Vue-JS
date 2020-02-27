@@ -1,13 +1,21 @@
 import Vue from "vue";
 
-//State;
-import App from "./State Management/App.vue";
-import { store } from "./State Management/store/store";
+import App from "./Vuex with Axios/App.vue";
+import { store } from "./Vuex with Axios/store/store";
 new Vue({
   el: "#app",
   store: store,
   render: h => h(App)
 });
+
+//State;
+// import App from "./State Management/App.vue";
+// import { store } from "./State Management/store/store";
+// new Vue({
+//   el: "#app",
+//   store: store,
+//   render: h => h(App)
+// });
 
 //    Routing
 // import App from "./Routing/App.vue";

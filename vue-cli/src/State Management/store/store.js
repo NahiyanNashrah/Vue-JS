@@ -15,20 +15,20 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-    increment: (state, payload) => {
+    increment(state, payload) {
       state.counter += payload;
     },
-    decrement: (state, payload) => {
+    decrement(state, payload) {
       state.counter -= payload;
     }
   },
   actions: {
-    asyncIncrement: (context, payload) => {
+    asyncIncrement(context, payload) {
       setTimeout(() => {
         context.commit("increment", payload.by);
       }, payload.duration);
     },
-    asyncDecrement: (context, payload) => {
+    asyncDecrement(context, payload) {
       setTimeout(() => {
         context.commit("decrement", payload.by);
       }, payload.duration);
